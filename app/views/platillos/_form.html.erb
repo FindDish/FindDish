@@ -1,0 +1,33 @@
+<%= form_for(platillo) do |f| %>
+  <% if platillo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(platillo.errors.count, "error") %> prohibited this platillo from being saved:</h2>
+
+      <ul>
+      <% platillo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ingrediente %>
+    <%= f.text_field :ingrediente %>
+  </div>
+
+  <div class="field">
+    <%= f.label :precio %>
+    <%= f.text_field :precio %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

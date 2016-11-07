@@ -1,0 +1,3 @@
+class Platillo < ApplicationRecord
+
+end
