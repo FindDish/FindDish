@@ -79,44 +79,41 @@
 
 <article>
 <section>
-<h2><em>Usuarios Registrados</em></h2>
+<h2><em>platillos Registrados</em></h2>
 
 <table>
   <thead>
     <tr>
       <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Cedula</th>
-      <th>Numero</th>
-      <th>Email</th>
+      <th>Ingredientes</th>
+      <th>Precio</th>
       <th colspan="3">Acciones</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @usuarios.each do |usuario| %>
+    <% @platillos.each do |platillo| %>
       <tr>
-        <td><%= usuario.nombre %></td>
-        <td><%= usuario.apellido %></td>
-        <td><%= usuario.cedula %></td>
-        <td><%= usuario.numero %></td>
-        <td><%= usuario.email %></td>
-        <td><%= link_to 'Mostar', usuario %></td>
-        <td><%= link_to 'Editar', edit_usuario_path(usuario) %></td>
-        <td><%= link_to 'Destruir', usuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= platillo.nombre %></td>
+        <td><%= platillo.ingrediente %></td>
+        <td><%= platillo.precio %></td>
+
+        <td><%= link_to 'Mostar', platillo %></td>
+        <td><%= link_to 'Editar', edit_platillo_path(platillo) %></td>
+        <td><%= link_to 'Destruir', platillo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
     <div class="relative">
-    <center><%= link_to 'Registrarse', new_usuario_path %></center>
+    <center><%= link_to 'Registrar', new_platillo_path %></center>
     </div>
 </section>
 </article>
 
 <footer>
-  <center><em>Estas personas ya estan encontrando sus platillos favoritos con nosotros. Presiona "Registrarse" y unete a ellos</em></center>
+  <center><em>Platillos disponibles</em></center>
 </footer>
 
 </body>
