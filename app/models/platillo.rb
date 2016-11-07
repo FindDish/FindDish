@@ -1,3 +1,0 @@
-class Platillo < ApplicationRecord
-
-end
