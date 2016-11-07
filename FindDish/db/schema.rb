@@ -10,7 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005214235) do
+ActiveRecord::Schema.define(version: 20161107165023) do
+
+  create_table "establecimientos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "nombre"
+    t.string   "especialidad"
+    t.string   "email"
+    t.integer  "calificacion"
+    t.string   "direccion"
+    t.string   "rif"
+    t.integer  "telefono"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "platillos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "nombre"
+    t.string   "ingrediente"
+    t.integer  "precio"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "reservas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "fecha"
+    t.string   "estado"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "usuarios", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nombre"
@@ -22,4 +49,6 @@ ActiveRecord::Schema.define(version: 20161005214235) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "platillos", "establecimientos", column: "id", name: "ID_establecimiento"
+  add_foreign_key "reservas", "usuarios", column: "id", name: "ID_usuario"
 end

@@ -13,21 +13,20 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: Gabo
-  password: mypassword
-  host: 127.0.0.1
-  port: 3307
+  username: root
+  password: lady
+  host: localhost
 
 development:
   <<: *default
-  database: Finddish_development
+  database: bdp_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: Finddish_test
+  database: bdp_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -50,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: finddish_production
-  username: finddish
-  password: <%= ENV['FINDDISH_DATABASE_PASSWORD'] %>
+  database: bdp_production
+  username: bdp
+  password: <%= ENV['BDP_DATABASE_PASSWORD'] %>

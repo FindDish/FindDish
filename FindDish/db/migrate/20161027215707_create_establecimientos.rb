@@ -1,7 +1,7 @@
 class CreateEstablecimientos < ActiveRecord::Migration[5.0]
   def change
     create_table :establecimientos do |t|
-      t.string :[nombre
+      t.string :nombre
       t.string :especialidad
       t.string :email
       t.integer :calificacion
