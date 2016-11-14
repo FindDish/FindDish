@@ -21,6 +21,7 @@ class EstablecimientosController < ApplicationController
   def edit
   end
 
+
   # POST /establecimientos
   # POST /establecimientos.json
   def create
