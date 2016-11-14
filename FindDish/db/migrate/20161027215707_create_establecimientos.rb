@@ -9,6 +9,14 @@ class CreateEstablecimientos < ActiveRecord::Migration[5.0]
       t.string :rif
       t.integer :telefono
 
+
+      t.timestamps
+    end
+    create_table :platillos do |t|
+      t.string :nombre
+      t.string :ingrediente
+      t.integer :precio
+
       t.timestamps
     end
   end

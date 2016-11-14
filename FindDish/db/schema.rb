@@ -50,5 +50,4 @@ ActiveRecord::Schema.define(version: 20161107194234) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "platillos", "establecimientos", column: "id", name: "ID_establecimiento"
 end
