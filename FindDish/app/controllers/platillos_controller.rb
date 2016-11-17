@@ -1,10 +1,12 @@
 class PlatillosController < ApplicationController
   before_action :set_platillo, only: [:show, :edit, :update, :destroy]
+   before_action :set_establecimiento, only: [:show, :edit, :update, :destroy]
 
   # GET /platillos
   # GET /platillos.json
   def index
     @platillos = Platillo.all
+    @establecimientos = Establecimiento.all
   end
 
   # GET /platillos/1
@@ -67,8 +69,12 @@ class PlatillosController < ApplicationController
       @platillo = Platillo.find(params[:id])
     end
 
+    def set_establecimiento
+      @establecimiento = Establecimiento.find(params[:id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def platillo_params
-      params.require(:platillo).permit(:nombre, :ingrediente, :precio)
+      params.require(:platillo).permit(:nombre,:ingrediente, :precio)
     end
 end

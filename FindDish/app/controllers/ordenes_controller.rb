@@ -1,9 +1,9 @@
 class OrdenesController < ApplicationController
   before_action :set_orden, only: [:show, :edit, :update, :destroy]
-
   # GET /ordenes
   # GET /ordenes.json
   def index
+
     @ordenes = Orden.all
   end
 
@@ -71,4 +71,10 @@ class OrdenesController < ApplicationController
     def orden_params
       params.require(:orden).permit(:fecha, :hora,:total, :estado)
     end
+
+    def set_establecimiento
+      @establecimiento = Establecimiento.find(params[:id])
+    end
+
+
 end
