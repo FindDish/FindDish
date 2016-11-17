@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107194234) do
+ActiveRecord::Schema.define(version: 20161117154619) do
+
+  create_table "alergias", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "alergias"
+    t.integer  "usuario_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["usuario_id"], name: "fk_rails_fe7d94f07c", using: :btree
+  end
 
   create_table "establecimientos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nombre"
@@ -24,20 +32,54 @@ ActiveRecord::Schema.define(version: 20161107194234) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "ingredientes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "ingredientes"
+    t.integer  "platillo_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["platillo_id"], name: "fk_rails_9904e9cee8", using: :btree
+  end
+
+  create_table "ordenes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "platillo_id"
+    t.integer  "usuario_id"
+    t.date     "fecha"
+    t.time     "hora"
+    t.string   "estado"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["platillo_id"], name: "fk_rails_eb884b6548", using: :btree
+    t.index ["usuario_id"], name: "fk_rails_9ea5889946", using: :btree
+  end
+
   create_table "platillos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "establecimiento_id"
     t.string   "nombre"
     t.string   "ingrediente"
     t.integer  "precio"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["establecimiento_id"], name: "index_platillos_on_establecimiento_id", using: :btree
   end
 
   create_table "reservas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.date     "fecha"
     t.time     "hora"
     t.string   "estado"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "establecimiento_id"
+    t.integer  "usuario_id"
+    t.index ["establecimiento_id"], name: "fk_rails_cbaee0d9ed", using: :btree
+    t.index ["usuario_id"], name: "fk_rails_df01d3b29f", using: :btree
+  end
+
+  create_table "telefonos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "telefono"
+    t.integer  "usuario_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["usuario_id"], name: "fk_rails_b454941ef1", using: :btree
   end
 
   create_table "usuarios", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -50,4 +92,12 @@ ActiveRecord::Schema.define(version: 20161107194234) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "alergias", "usuarios"
+  add_foreign_key "ingredientes", "platillos"
+  add_foreign_key "ordenes", "platillos"
+  add_foreign_key "ordenes", "usuarios"
+  add_foreign_key "platillos", "establecimientos"
+  add_foreign_key "reservas", "establecimientos"
+  add_foreign_key "reservas", "usuarios"
+  add_foreign_key "telefonos", "usuarios"
 end
