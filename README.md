@@ -1,24 +1,14 @@
-# README
+# FindDish
+FindDish brinda la oportunidad de conseguir locales, restaurantes, bares, lounges, etc, según sus gustos y preferencias de forma rápida y precisa. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Integrantes:
 
-* Ruby version
+Andrea Scardino
 
-* System dependencies
+Gabriele Iafigliola
 
-* Configuration
+Ladymar Rodrigues
 
-* Database creation
+Veronica Lugli
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
