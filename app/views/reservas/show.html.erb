@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+ body{
+    margin: 10em 10em 10em 10em;
+    background: linear-gradient(red, yellow);
+  }
+
+  header{
+    background-color: black;
+    padding: 0;
+  }
+
+  h1{
+    font-size: 50px;
+    color:white;
+    text-decoration: underline;
+    padding:1em;
+  }
+
+  h2{
+    color:white;
+  }
+
+  section{
+    border-width: 1em;
+    margin-top: -35px;
+    margin-left: 165px;
+    margin-right: 165px;
+    padding: 10px;
+    max-width: 650px;
+    background: linear-gradient(red, yellow);
+  }
+
+  table,tr,td,th{
+    background-color: white;
+    border: solid;
+    border-collapse: collapse;
+  }
+
+  th,tr,td{
+    padding: 5px;
+  }
+
+  article{
+    background-color: black;
+  }
+
+
+  div.relative{
+    max-width: 170px;
+    position: relative;
+    bottom:0;
+    left: 235px;
+    background-color: white;
+    border-radius: 130px;
+    border: solid;
+    border-color: black;
+    font-size: 25px;
+
+  }
+
+   div.center {
+    border: solid;
+    border-color: black;
+    background-color: white;
+    text-align: justify;
+    font-size: 20px;
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+  footer{
+    padding:2em;
+    background-color: black;
+    color:white;
+  }
+
+</style>
+
+<body>
+
+<p id="notice"><%= notice %></p>
+
+<header>
+<h1><center>FINDDISH<center></h1>
+</header>
+
+<article>
+<section>
+
+<h2><em>Reserva Solicitada</em></h2>
+
+<div class ="center">
+<p>
+  <strong>Fecha:</strong>
+  <%= @reserva.fecha %>
+</p>
+
+<p>
+  <strong>Hora:</strong>
+  <%= @reserva.hora %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @reserva.estado %>
+</p>
+
+
+</div>
+<br>
+    <div class="relative">
+    <center> <%= link_to 'Volver', reservas_path %> o <%= link_to 'Editar', edit_reserva_path(@reserva) %>
+    </center>
+    </div>
+</section>
+</article>
+
+<footer>
+  <center><em>Aqui esta la reserva que usted solicito, le pedimos que no de un mal uso a esta informacion</em></center>
+</footer>
+
+</body>
+</html>

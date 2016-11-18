@@ -1,0 +1,2 @@
+module EstablecimientosControllerHelper
+end
