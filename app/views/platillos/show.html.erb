@@ -90,25 +90,47 @@
 
 <article>
 
+<body>
+
+<p id="notice"><%= notice %></p>
+
+<header>
+
+</header>
+
+<article>
 <section>
-<h2><em>Platillo Nuevo</em></h2>
 
-	<div class="center">
-	<%= render 'form', platillo: @platillo %>
-	</div>
-	<br>
+<h2><em>Platillo Solicitado</em></h2>
+
+<div class ="center">
+<p>
+  <strong>Nombre:</strong>
+  <%= @platillo.nombre %>
+</p>
+
+<p>
+  <strong>Ingredientes:</strong>
+  <%= @platillo.ingrediente %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @platillo.precio %>
+</p>
+
+</div>
+<br>
     <div class="relative">
-    <center><%= link_to 'Volver', platillos_path %></center>
+    <center> <%= link_to 'Volver', platillos_path %> o <%= link_to 'Editar', edit_platillo_path(@platillo) %>
+    </center>
     </div>
-
 </section>
 </article>
 
 <footer>
-  <center><em>Esta a un click de encontrar sus platillos favoritos en segundos, no hay nada que perder mas que el antojo</em></center>
+  <center><em>Aqui esta el platillo que usted solicito</em></center>
 </footer>
-
-
 
 </body>
 </html>
