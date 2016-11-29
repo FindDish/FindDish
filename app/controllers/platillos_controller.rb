@@ -6,9 +6,7 @@ class PlatillosController < ApplicationController
   # GET /platillos.json
   def index
     @platillos = Platillo.all
-    @establecimientos = Establecimiento.all
   end
-
   # GET /platillos/1
   # GET /platillos/1.json
   def show

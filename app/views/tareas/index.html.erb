@@ -75,12 +75,20 @@
 <h1><center>FINDDISH<center></h1>
 </header>
 
+  <% @quizz.each do |tupla| %>
+       <div>
+       <p>Platillo y Establecimiento: <%= tupla.Nombre%> </p>
+      
+       </div> 
+      
+       <div>
+       <%= tupla.N_Ordenes %>
+       </div> 
+       <% end %>
+
 </div>
 <br>
-    <div class="relative">
-    <center> <%= link_to 'Queries', Ver_tareas_path %> 
-    </center>
-    </div>
+   
 </section>
 </article>
 

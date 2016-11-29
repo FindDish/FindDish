@@ -13,10 +13,10 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: AndreaScardino
-  password: Andrea121197
+  username: Gabo
+  password: mypassword
   host: 127.0.0.1
-  port: 3306
+  port: 3307
 development:
   <<: *default
   database: finddish2_development

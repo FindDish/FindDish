@@ -12,6 +12,23 @@ root 'platillos#index'
 resources :reservas
 root 'reservas#index'
   
+resources :tareas  do
+  member do
+    get 'Ver'
+ 	  get 'Query1'
+    get 'Query2'
+    get 'Query3'
+    get 'Query4'
+  end
+  collection do
+    get 'Ver'
+    get 'Query1'
+    get 'Query2'
+    get 'Query3'
+    get 'Query4'
+  end
+end
+
 resources :tareas
 root 'tareas#index'
 
