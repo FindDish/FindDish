@@ -8,6 +8,7 @@ group by platillos.id
 order by N_Ordenes desc
 limit 10
 ")
+  	
   end
 
 end

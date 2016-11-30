@@ -3,9 +3,9 @@ class OrdenesController < ApplicationController
   # GET /ordenes
   # GET /ordenes.json
   def index
-
     @ordenes = Orden.all
   end
+
 
   # GET /ordens/1
   # GET /ordens/1.json
