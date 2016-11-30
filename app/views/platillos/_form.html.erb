@@ -23,9 +23,13 @@
 
   <div class="field">
     <%= f.label :precio %>
-    <%= f.text_field :precio %>
+    <%= f.number_field :precio %>
   </div>
 
+   <div class="field">
+   
+    <%= f.association :establecimiento %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
