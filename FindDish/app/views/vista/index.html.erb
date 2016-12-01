@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.myButton {
+  -moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
+  -webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
+  box-shadow:inset 0px 39px 0px -24px #e67a73;
+  background-color:#e4685d;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  padding:10px 34px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #b23e35;
+
+}
+.myButton:hover {
+  background-color:#eb675e;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
+
+.busca {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 350px;
+  height: 5px;
+  margin: 18px;
+  padding: 10px 20px;
+  overflow: hidden;
+  border: 1px solid #b7b7b7;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  font: normal 16px/normal "Times New Roman", Times, serif;
+  color: rgba(0,142,198,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(252,252,252,1);
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+
+
+</style>
+  <br />
+<link href="/style.css" type="text/css" rel=stylesheet>
+<title>FindDish</title>
+</head>
+<!-- LOGO -->
+<center>
+<img src="http://fotos.fotoflexer.com/c602ad9b29403b4b0112341909860429.jpg" alt="FindDish Logo" >
+</center>
+<!-- BUSQUEDA
+
+  <br />
+  <center>
+<input class="busca" placeholder="Buscar" />
+</center>
+-->
+
+ <!-- BOTONES -->
+<center>
+<a href="vista#index" class="myButton">Home</a>
+<a href="#" class="myButton">Buscar</a>
+<a href="establecimientos#index" class="myButton">Establecimientos</a>
+<a href="#" class="myButton">Contacto</a>
+<a href="#" class="myButton">Mi Perfil</a>
+<a href="tareas#index" class="myButton">Tarea</a>
+
+</center>
+<center>
+<h2>Descubre los mejores restaurantes de tu ciudad</h2>
+</center>
+
+<body>
+  <div align="left">
+<h2 >Recomendaciones de establecimientos</h2>
+<% @topest.each do |tupla| %>
+     <div>
+     <p><%= tupla.Nombre%> </p>
+   </div>
+     <% end %>
+<br />
+<h2 >Recomendaciones de platillos</h2>
+<% @toppla.each do |tupla| %>
+     <div>
+     <p><%= tupla.Nombre%> </p>
+   </div>
+</div>
+<img src="http://fotos.fotoflexer.com/6551fa91cbe4cbfe9004ba62d4d10e8a.jpg" alt="Restaurante" align="right" >
+
+
+</body>
+
+<h2></h2>
+
+
+ </html>
