@@ -64,13 +64,13 @@
 <center>
 <img src="http://fotos.fotoflexer.com/c602ad9b29403b4b0112341909860429.jpg" alt="FindDish Logo" >
 </center>
-<!-- BUSQUEDA -->
+<!-- BUSQUEDA
 
   <br />
   <center>
 <input class="busca" placeholder="Buscar" />
 </center>
-
+-->
 
  <!-- BOTONES -->
 <center>
@@ -86,7 +86,25 @@
 <h2>Descubre los mejores restaurantes de tu ciudad</h2>
 </center>
 
-<body></body>
+<body>
+  <div align="left">
+<h2 >Recomendaciones de establecimientos</h2>
+<% @topest.each do |tupla| %>
+     <div>
+     <p><%= tupla.Nombre%> </p>
+   </div>
+     <% end %>
+<br />
+<h2 >Recomendaciones de platillos</h2>
+<% @toppla.each do |tupla| %>
+     <div>
+     <p><%= tupla.Nombre%> </p>
+   </div>
+</div>
+<img src="http://fotos.fotoflexer.com/6551fa91cbe4cbfe9004ba62d4d10e8a.jpg" alt="Restaurante" align="right" >
+
+
+</body>
 
 <h2></h2>
 
